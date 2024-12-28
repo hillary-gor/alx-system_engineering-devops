@@ -8,5 +8,10 @@ apt install -y apache2
 # Start Apache service
 service apache2 start
 
+# Check if Apache is running and output the expected message
+if service apache2 status | grep -q "running"; then
+  echo "apache2 is running"
+fi
+
 # Create an index.html file in the web root
 echo "Hello ALX" > /var/www/html/index.html
