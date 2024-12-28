@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
-# run apache on designated container
+# This script fixes the container to run Apache and return "Hello ALX" on the root page
 
-echo "ServerName localhost" >> /etc/apache2.conf
+# Update package list and install Apache
+apt update -y
+apt install -y apache2
+
+# Start Apache service
 service apache2 start
+
+# Create an index.html file in the web root
+echo "Hello ALX" > /var/www/html/index.html
